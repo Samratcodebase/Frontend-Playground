@@ -1,11 +1,11 @@
 import Nav from "../components/Nav";
-const Home = () => {
+const About = () => {
   return (
     <>
       <Nav />
-      <h1>You are on Home page</h1>
+        <h1>You are on Home About</h1>
     </>
   );
 };
 
-export default Home;
+export default About;
