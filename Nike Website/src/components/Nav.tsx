@@ -12,42 +12,56 @@ const Nav = () => {
   };
   const container = {
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     alignItems: "center",
     width: "100%",
+    fontWeight: "bold",
   };
   return (
     <>
       <div style={container}>
-        <Logo><img src={BrandLogo} alt="brand logo" /></Logo>
-        <nav>
-          <ul style={navStyle}>
-            <li>
-              <Link style={{ textDecoration: "none" }} to="/">
-                {" "}
-                Home{" "}
-              </Link>
-            </li>
-            <li>
-              <Link style={{ textDecoration: "none" }} to="/location">
-                {" "}
-                Location{" "}
-              </Link>
-            </li>
-            <li>
-              <Link style={{ textDecoration: "none" }} to="/about">
-                {" "}
-                ABOUT
-              </Link>
-            </li>
-            <li>
-              <Link style={{ textDecoration: "none" }} to="/contact">
-                {" "}
-                CONTACT
-              </Link>
-            </li>
-          </ul>
-        </nav>
+        <Logo>
+          <img src={BrandLogo} alt="brand logo" />
+        </Logo>
+        <div>
+          <nav>
+            <ul style={navStyle}>
+              <li>
+                <Link style={{ textDecoration: "none", color: "black" }} to="/">
+                  {" "}
+                  MENU{" "}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  style={{ textDecoration: "none", color: "black" }}
+                  to="/location"
+                >
+                  {" "}
+                  LOCATION{" "}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  style={{ textDecoration: "none", color: "black" }}
+                  to="/about"
+                >
+                  {" "}
+                  ABOUT
+                </Link>
+              </li>
+              <li>
+                <Link
+                  style={{ textDecoration: "none", color: "black" }}
+                  to="/contact"
+                >
+                  {" "}
+                  CONTACT
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
         <Button
           Text="Login"
           style={{

@@ -5,6 +5,9 @@ type styleT = {
   fontSize: string;
   width: string;
   textAlign: "center" | "left" | "right";
+  borderWidth?: string;
+  borderStyle?: string;
+  borderColor?: string;
 };
 type props = {
   Text: string;
@@ -18,7 +21,10 @@ const Button = ({ Text, style }: props) => {
     fontSize: style.fontSize,
     width: style.width,
     textAlign: style.textAlign,
-    display:"inline"
+    display: "inline",
+    borderWidth: style.borderWidth,
+    borderStyle: style.borderStyle,
+    borderColor: style.borderColor,
   };
   return (
     <>

@@ -1,4 +1,4 @@
-const Logo = ({ children }: any) => {
+const Logo = ({ children }: { children: React.ReactNode }) => {
   return <>{children}</>;
 };
 
