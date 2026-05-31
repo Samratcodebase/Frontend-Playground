@@ -1,0 +1,16 @@
+.nav-bar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 2rem;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  gap: 2rem;
+}
+
+li {
+  cursor: pointer;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}

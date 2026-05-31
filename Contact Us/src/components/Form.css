@@ -1,10 +1,9 @@
 .form-card {
-  max-width: 460px;
-  margin: 1.5rem auto;
-  padding: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 2rem 2rem 0 2rem;
   background: #ffffff;
-
-  border-radius: 12px;
 }
 
 /* ── Floating label field ── */
@@ -71,13 +70,17 @@
 
 /* ── Submit button ── */
 
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .submit-btn {
   display: block;
-  width: 30%;
-  padding: 12px;
+  padding: 12px 24px;
+
   font-size: 15px;
   font-family: inherit;
-  margin-left: 20rem;
   cursor: pointer;
   border-radius: 8px;
   border: 0.5px solid rgba(0, 0, 0, 0.3);
@@ -86,6 +89,7 @@
   transition:
     background 0.15s,
     transform 0.1s;
+  margin-top: 1rem;
 }
 
 .submit-btn:hover {

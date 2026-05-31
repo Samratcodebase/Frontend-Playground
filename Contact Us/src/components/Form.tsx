@@ -8,7 +8,7 @@ interface FormState {
   message: string;
 }
 
-const ContactForm: React.FC = () => {
+const Form: React.FC = () => {
   const [form, setForm] = useState<FormState>({
     name: "",
     email: "",
@@ -16,22 +16,25 @@ const ContactForm: React.FC = () => {
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setForm((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+    const { id, value } = e.target;
+    setForm((prev) => ({ ...prev, [id]: value }));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
     const { name, email, message } = form;
     if (!name.trim() || !email.trim() || !message.trim()) {
       alert("Please fill in all fields.");
       return;
     }
     alert("Message sent!");
+    setForm({ name: "", email: "", message: "" });
   };
 
   return (
-    <div className="form-card">
+    <form className="form-card" onSubmit={handleSubmit}>
       <div className="field">
         <input
           type="text"
@@ -39,6 +42,7 @@ const ContactForm: React.FC = () => {
           placeholder=" "
           value={form.name}
           onChange={handleChange}
+          required
         />
         <label htmlFor="name">Name</label>
       </div>
@@ -50,6 +54,7 @@ const ContactForm: React.FC = () => {
           placeholder=" "
           value={form.email}
           onChange={handleChange}
+          required
         />
         <label htmlFor="email">Email</label>
       </div>
@@ -61,16 +66,18 @@ const ContactForm: React.FC = () => {
           placeholder=" "
           value={form.message}
           onChange={handleChange}
+          required
         />
         <label htmlFor="message">Message</label>
       </div>
 
-      <button className="submit-btn" onClick={handleSubmit}>
-        Submit
-      </button>
-  
-    </div>
+      <div className="button-wrapper">
+        <button type="submit" className="submit-btn">
+          Submit
+        </button>
+      </div>
+    </form>
   );
 };
 
-export default ContactForm;
+export default Form;

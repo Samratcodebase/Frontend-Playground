@@ -1,13 +1,50 @@
 .container {
-  height: 100%;
-  width: 50%;
-  background-color: antiquewhite;
+  display: flex;
+  margin-top: 105px;
 }
 
-.Btn-container {
-  display: flex;
-  flex-direction: row;
+.contact-wrapper {
+  width: 50%;
 }
-.btn-last{
-  margin-left: 240px;
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  margin-left: 670px;
+}
+
+.btn-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  padding: 0 2rem;
+  padding-top: 2rem;
+}
+
+.btn-row > button {
+  flex: 1;
+  min-width: 0;
+}
+
+.btn-center {
+  padding: 0 2rem;
+}
+
+.btn-center > button {
+  width: 100%;
+}
+
+.image-container {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
 }
