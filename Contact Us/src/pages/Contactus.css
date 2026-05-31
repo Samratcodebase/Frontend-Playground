@@ -1,0 +1,13 @@
+.container {
+  height: 100%;
+  width: 50%;
+  background-color: antiquewhite;
+}
+
+.Btn-container {
+  display: flex;
+  flex-direction: row;
+}
+.btn-last{
+  margin-left: 240px;
+}

@@ -1,0 +1,97 @@
+.form-card {
+  max-width: 460px;
+  margin: 1.5rem auto;
+  padding: 2rem;
+  background: #ffffff;
+
+  border-radius: 12px;
+}
+
+/* ── Floating label field ── */
+
+.field {
+  position: relative;
+  margin: 2rem 0;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 18px 14px 6px;
+  font-size: 15px;
+  font-family: inherit;
+  background: #ffffff;
+  color: #111;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: vertical;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Label default: centered vertically over input */
+.field label {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+  transition:
+    top 0.18s ease,
+    transform 0.18s ease,
+    font-size 0.18s ease;
+  background: #ffffff;
+  padding: 0 3px;
+}
+
+/* Textarea: label starts near top instead of middle */
+.field textarea ~ label {
+  top: 22px;
+  transform: none;
+}
+
+/* Floated state: focus OR has value */
+.field input:focus ~ label,
+.field input:not(:placeholder-shown) ~ label,
+.field textarea:focus ~ label,
+.field textarea:not(:placeholder-shown) ~ label {
+  top: 0;
+  transform: translateY(-50%);
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+/* ── Submit button ── */
+
+.submit-btn {
+  display: block;
+  width: 30%;
+  padding: 12px;
+  font-size: 15px;
+  font-family: inherit;
+  margin-left: 20rem;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 0.5px solid rgba(0, 0, 0, 0.3);
+  background: #ffffff;
+  color: #111;
+  transition:
+    background 0.15s,
+    transform 0.1s;
+}
+
+.submit-btn:hover {
+  background: #f5f5f5;
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
