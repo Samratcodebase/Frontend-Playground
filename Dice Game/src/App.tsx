@@ -3,7 +3,7 @@ import "./App.css";
 import Home from "./pages/Home/Home";
 import Game from "./pages/Game/Game";
 function App() {
-  const [isGame, setisGame] = useState<boolean>(true);
+  const [isGame, setisGame] = useState<boolean>(false);
 
   const toggleGame = () => {
     setisGame((prev) => {
