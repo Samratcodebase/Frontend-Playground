@@ -1,0 +1,47 @@
+.recommended-container {
+  padding: 1.25rem 1.5rem 0.75rem;
+  background-color: #fff;
+
+}
+
+.recommended-container h2 {
+  font-size: 13px;
+  font-weight: 500;
+  color: #9ca3af;
+  margin: 0 0 0.75rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.recommended-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.recommended-btns button {
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 999px;
+  border: 1px solid #d1d5db;
+  background: transparent;
+  color: #6b7280;
+  cursor: pointer;
+  transition:
+    background 0.15s,
+    color 0.15s,
+    border-color 0.15s;
+}
+
+.recommended-btns button:hover {
+  background: #f3f4f6;
+  color: #111827;
+  border-color: #9ca3af;
+}
+
+.recommended-btns button.active {
+  background: #111827;
+  color: #fff;
+  border-color: #111827;
+}

@@ -1,0 +1,77 @@
+nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+  border-bottom: 2px solid #f3f3f3;
+}
+
+.brand-logo {
+  flex: 0 0 auto;
+}
+
+.input-container {
+  flex: 1 1 0;
+  display: flex;
+  justify-content: center;
+}
+
+.input-container input {
+  padding: 12px 20px;
+  border: none;
+  background-color: #f7f6f6;
+  outline: none;
+  margin: 0;
+  border-radius: 5px;
+  width: 40rem;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.input-icon-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+/* Additional tweaks: don't change HTML or classnames */
+.brand-logo h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.input-icon-container > * {
+  font-size: 1.2rem;
+  color: #333;
+  cursor: pointer;
+}
+
+/* Ensure input stays centered and responsive */
+.input-container {
+  padding: 0 1rem;
+}
+
+@media (max-width: 900px) {
+  .input-container input {
+    width: 60%;
+  }
+  .input-icon-container > * {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    gap: 0.5rem;
+  }
+  .brand-logo h1 {
+    font-size: 1rem;
+  }
+  .input-container input {
+    width: 100%;
+  }
+}

@@ -1,0 +1,33 @@
+.main-container {
+  width: 100%;
+
+  display: flex;
+  height: 100vh; /* change min-height to height */
+  box-sizing: border-box;
+
+  /* no overflow here */
+}
+
+.side-bar {
+  flex: 0 0 220px;
+  width: 220px;
+  min-width: 160px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* no sticky needed anymore — it just sits there */
+}
+
+.main-container > .card-container {
+  flex: 1 1 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1.5rem;
+  align-content: flex-start;
+  justify-content: flex-start;
+  min-width: 0;
+  overflow-y: auto; /* ONLY this scrolls */
+  height: 100%; /* must fill the parent to know when to scroll */
+}
