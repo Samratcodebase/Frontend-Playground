@@ -3,16 +3,33 @@ import Recommended from "../Recommended/Recommended";
 import { FiShoppingCart } from "react-icons/fi";
 import { FaRegUser, FaRegHeart } from "react-icons/fa";
 
-const SearchBar = () => {
+type SearchBarProps = {
+  SearchQuery: string;
+  handleSearchQuery: (event: React.ChangeEvent<HTMLInputElement>) => void;
+
+  setBrand: (value: string) => void;
+};
+
+const SearchBar = ({
+  SearchQuery,
+  handleSearchQuery,
+
+  setBrand,
+}: SearchBarProps) => {
   return (
     <>
       <nav>
         <div className="brand-logo">
           <h1>logo</h1>
         </div>
-        <Recommended />
+        <Recommended setBrand={setBrand} />
         <div className="input-container">
-          <input type="text" placeholder="Enter anything" />
+          <input
+            type="text"
+            value={SearchQuery}
+            placeholder="Enter anything"
+            onChange={(e) => handleSearchQuery(e)}
+          />
         </div>
         <div className="input-icon-container">
           <FaRegHeart />

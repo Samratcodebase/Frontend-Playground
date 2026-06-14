@@ -1,13 +1,16 @@
 import "./Recommended.css";
+type RecomendedProp = {
+  setBrand: (value: string) => void;
+};
 
-function Recommended() {
+const brands = ["All Products", "Nike", "Puma", "Chappal", "Adidas", "Vans"];
+function Recommended({ setBrand }: RecomendedProp) {
   return (
     <div className="recommended-container">
       <div className="recommended-btns">
-        <button>All Products</button>
-        <button>Nike</button>
-        <button>Puma</button> <button>Chappal</button>
-        <button>Adidas</button> <button>Vans</button>
+        {brands.map((band) => {
+          return <button onClick={() => setBrand(band)}>{band}</button>;
+        })}
       </div>
     </div>
   );

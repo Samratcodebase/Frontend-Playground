@@ -1,11 +1,17 @@
-import { useState } from "react";
 import "./Category.css";
 
-const categories = ["All", "Sneakers", "Flats", "Heels"];
+const categories = ["ALL", "Sneakers", "Flats", "Heels"];
+type RadioQueryType = {
+  Category: string;
+  Price: string;
+  Color: string;
+};
 
-function Category() {
-  const [selected, setSelected] = useState("All");
-
+type SideBarProps = {
+  RadioQuery: RadioQueryType;
+  setRadioQuery:React.Dispatch<React.SetStateAction<RadioQueryType>>;
+};
+function Category({ RadioQuery, setRadioQuery }: SideBarProps) {
   return (
     <div className="category-container">
       <h2>Category</h2>
@@ -14,15 +20,22 @@ function Category() {
           <label
             key={cat}
             htmlFor={cat}
-            className={`category-option ${selected === cat ? "active" : ""}`}
+            className={`category-option ${RadioQuery.Category === cat ? "active" : ""}`}
           >
             <input
               type="radio"
               name="category"
               id={cat}
               value={cat}
-              checked={selected === cat}
-              onChange={() => setSelected(cat)}
+              checked={RadioQuery.Category === cat}
+              onChange={() =>
+                setRadioQuery((prev) => {
+                  return {
+                    ...prev,
+                    Category: cat,
+                  };
+                })
+              }
             />
             {cat}
           </label>

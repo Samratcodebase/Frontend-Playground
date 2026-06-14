@@ -1,33 +1,43 @@
-import { useState, useEffect } from "react";
 import "./Color.css";
-const categories = ["All", "Green", "Red", "Black", "Blue", "White"];
-function Colors() {
-  const [SelectedColor, setSeletedColor] = useState("All");
-  console.log("The Color is", SelectedColor);
-  useEffect(() => {
-    console.log("Colors MOUNTED");
-    return () => console.log("Colors UNMOUNTED");
-  }, []);
+const colors = ["ALL", "Green", "Red", "Black", "Blue", "White"];
+type RadioQueryType = {
+  Category: string;
+  Price: string;
+  Color: string;
+};
+
+type SideBarProps = {
+  RadioQuery: RadioQueryType;
+  setRadioQuery: React.Dispatch<React.SetStateAction<RadioQueryType>>;
+};
+function Colors({ RadioQuery, setRadioQuery }: SideBarProps) {
   return (
     <div className="color-container">
       <h2>Colors</h2>
       <div className="color-form">
-        {categories.map((cat) => {
+        {colors.map((color) => {
           return (
             <label
-              key={cat}
-              htmlFor={`color-${cat}`}
-              className={`color-option ${SelectedColor === cat ? "active" : ""}`}
+              key={color}
+              htmlFor={`color-${color}`}
+              className={`color-option ${RadioQuery.Color === color ? "active" : ""}`}
             >
               <input
                 type="radio"
-                value={cat}
+                value={color}
                 name="color"
-                id={`color-${cat}`}
-                checked={SelectedColor === cat}
-                onChange={() => setSeletedColor(cat)}
+                id={`color-${color}`}
+                checked={RadioQuery.Color === color}
+                onChange={() =>
+                  setRadioQuery((prev) => {
+                    return {
+                      ...prev,
+                      Color: color,
+                    };
+                  })
+                }
               />
-              {cat}
+              {color}
             </label>
           );
         })}
