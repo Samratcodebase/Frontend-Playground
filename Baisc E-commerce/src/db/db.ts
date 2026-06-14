@@ -1,4 +1,15 @@
-const data = [
+export type Product = {
+  img: string;
+  title: string;
+  reviews: string;
+  prevPrice: string;
+  newPrice: string;
+  company: string;
+  color: string;
+  category: string;
+};
+
+const data: Product[] = [
   {
     img: "https://m.media-amazon.com/images/I/6125yAfsJKL._AC_UX575_.jpg",
     title: "Nike Air Monarch IV",

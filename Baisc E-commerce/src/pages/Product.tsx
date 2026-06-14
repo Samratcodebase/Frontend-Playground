@@ -1,11 +1,10 @@
-import Card from "../components/Card/Card";
 import "./Product.css";
-function Product() {
-  return (
-    <section className="card-container">
-      <Card />
-    </section>
-  );
+type ProductProps = {
+  children: React.ReactNode;
+};
+
+function Product({ children }: ProductProps) {
+  return <section className="card-container">{children}</section>;
 }
 
 export default Product;
