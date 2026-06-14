@@ -9,15 +9,15 @@ function Colors() {
     return () => console.log("Colors UNMOUNTED");
   }, []);
   return (
-    <div className="category-container">
+    <div className="color-container">
       <h2>Colors</h2>
-      <div className="category-form">
+      <div className="color-form">
         {categories.map((cat) => {
           return (
             <label
               key={cat}
               htmlFor={`color-${cat}`}
-              className={`category-option ${SelectedColor === cat ? "active" : ""}`}
+              className={`color-option ${SelectedColor === cat ? "active" : ""}`}
             >
               <input
                 type="radio"

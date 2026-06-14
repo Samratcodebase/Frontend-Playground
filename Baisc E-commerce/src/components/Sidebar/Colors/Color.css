@@ -1,8 +1,8 @@
-.category-container {
+.color-container {
   padding: 1.25rem 1.5rem;
 }
 
-.category-container h2 {
+.color-container h2 {
   font-size: 13px;
   font-weight: 500;
   color: #9ca3af;
@@ -11,13 +11,13 @@
   letter-spacing: 0.06em;
 }
 
-.category-form {
+.color-form {
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
-.category-option {
+.color-option {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -32,19 +32,19 @@
     color 0.15s;
 }
 
-.category-option input[type="radio"] {
+.color-option input[type="radio"] {
   accent-color: #111827;
   width: 15px;
   height: 15px;
   cursor: pointer;
 }
 
-.category-option:hover {
+.color-option:hover {
   background: #f3f4f6;
   color: #111827;
 }
 
-.category-option.active {
+.color-option.active {
   background: #f3f4f6;
   color: #111827;
 }
