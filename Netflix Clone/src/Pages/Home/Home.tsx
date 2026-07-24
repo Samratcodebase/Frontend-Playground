@@ -2,7 +2,7 @@ import "./Home.css";
 import Nav from "../../components/NavBar/Nav";
 import heroTitle from "../../assets/hero_title.png";
 import TitleCards from "../../components/TitleCards/TitleCards";
-import Footer from "../../components/Footer/Footer";
+
 
 export const Home = () => {
   return (
@@ -32,7 +32,7 @@ export const Home = () => {
         <TitleCards sectionTitle={"Older on Netflix"} />{" "}
         <TitleCards sectionTitle={"Newest on Netflix"} />
       </div>
-      <Footer />
+      
     </div>
   );
 };
